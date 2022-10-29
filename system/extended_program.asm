@@ -1,8 +1,14 @@
 org 0x500
 
-mov bx, 0
-mov ax, 320 * 200
-mov cl, 0x3a
+; video mode
+mov ah, 00h
+mov al, 13h
+int 10h
+
+call setupColorPallete
+mov bx, 320 * 50
+mov ax, 320 * 100
+mov cl, 01001001b
 call writingColorToVM
 
 writingColorToVM:
@@ -21,4 +27,41 @@ writingColorToVM:
 
 jmp $
 
-times 16384-($-$$) db 0
+setupColorPallete:
+    mov bl, 0
+    mov dh, 0
+    mov cx, 0
+    mov bh, 0
+    .loop:
+        ; red
+        mov bh, bl
+        and bh, 11100000b
+        shr bh, 2
+        mov dh, bh
+
+        ; green
+        mov bh, bl
+        and bh, 00011100b
+        shl bh, 1
+        mov ch, bh
+
+        ; blue
+        mov bh, bl
+        and bh, 00000011b
+        shl bh, 4
+        mov cl, bh
+
+        mov bh, 0
+        mov ah, 10h
+        mov al, 10h
+        int 10h
+
+        inc bl
+        cmp bl, 0
+        jz .done
+        jmp .loop
+
+    .done:
+        ret
+
+times 512*48-($-$$) db 0

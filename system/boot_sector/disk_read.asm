@@ -11,7 +11,7 @@ diskRead:
 
     mov bx, loadedExtendedProgram
     mov dl, [bootDisk]
-    mov al, 32
+    mov al, 48
 
     int 0x13
     jc .fail
