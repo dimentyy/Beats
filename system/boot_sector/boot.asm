@@ -3,6 +3,7 @@ org 0x7c00
 ; boot drive
 mov [bootDisk], dl
 
+; load extended program
 call diskRead
 jmp loadedExtendedProgram
 

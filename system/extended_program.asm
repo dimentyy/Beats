@@ -6,22 +6,23 @@ mov al, 13h
 int 10h
 
 call setupColorPallete
-mov bx, 320 * 50
-mov ax, 320 * 100
-mov cl, 01001001b
-call writingColorToVM
 
-writingColorToVM:
+mov bx, 0
+mov ax, 320 * 200
+mov cl, 01001001b
+mov dx, 0xa000
+
+call writingByteToRAM
+
+writingByteToRAM:
     .loop:
         cmp ax, 0
         jz .done
-        mov dx, 0xa000
         mov es, dx
-        mov byte [es:bx], cl
+        mov byte [es:bx], bh
         inc bx
         sub ax, 1
         jmp .loop
-
     .done:
         ret
 
@@ -63,5 +64,7 @@ setupColorPallete:
 
     .done:
         ret
+
+jmp $
 
 times 512*48-($-$$) db 0

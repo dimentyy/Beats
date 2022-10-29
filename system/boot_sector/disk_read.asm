@@ -4,17 +4,14 @@ bootDisk:
     db 0
 
 diskRead:
-    mov ah, 0x02
-    mov ch, 0x00
-    mov dh, 0x00
-    mov cl, 0x02
+    mov ch, 0
+    mov dh, 0
+    mov cl, 2
 
     mov bx, loadedExtendedProgram
     mov dl, [bootDisk]
     mov al, 48
 
-    int 0x13
-    jc .fail
+    mov ah, 2h
+    int 13h
     ret
-
-    .fail:
