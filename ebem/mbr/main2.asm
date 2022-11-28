@@ -6,7 +6,7 @@
 
 %define SIZE 512             ; MBR sector size (512 bytes)
 %define BASE 0x7C00          ; Address at which BIOS will load MBR
-%define DEST 0x0600          ; Address at which MBR should be copied
+%define DEST BASE - SIZE * 2          ; Address at which MBR should be copied
 
 %define ENTRY_NUM 4          ; Number of partition entries
 %define ENTRY_SIZE 16        ; Partition table entry size
@@ -14,7 +14,7 @@
 
 %define TOP 8                ; Padding from the top
 %define LEFT 32              ; Padding from the left
-%define COLOR 0x02           ; Background and text color
+%define COLOR 0x07           ; Background and text color
 
 ;********************************************************************;
 ;*                           NASM settings                          *;
@@ -410,13 +410,13 @@ TABLE_SIZE: EQU (ENTRY_NUM * ENTRY_SIZE)    ; Should be 4*16 = 64
 TABLE_OFFSET: EQU (SIZE - TABLE_SIZE - 2)   ; Should be 512-64-2 = 446
 
 ; beef partition
-db 0x80
+db 0x00
 db 0
 db 0x02
 db 0
 db 0xEA
 db 0
-db 0x06
+db 0x01
 db 0
 dq 0
 

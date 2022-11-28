@@ -13,24 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/boot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/copy_ebem.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/main2.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/main3.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/menu.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/print.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.command" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/extended_program/custom_interrupts.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/extended_program/input_driver/mouse/get.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/extended_program/input_driver/mouse/setup.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/extended_program/input_driver/setup.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/extended_program/main.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile.command" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/boot_sector/boot.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/boot_sector/disk_read.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/extended_program.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot" beforeDir="false" afterPath="$PROJECT_DIR$/boot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main2.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main2.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/system/extended_program/main.asm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -12,7 +12,7 @@ mov dl, [bootDrive]
 mov dh, 0
 int 13h
 
-jmp system
+jmp bootSector + 512
 
 bootDrive equ 0x00
 
@@ -21,6 +21,13 @@ bootDrive equ 0x00
 
 times 510-($-$$) db 0
 dw 0xaa55
+
+mov ax, 3
+int 10h
+
+mov ax, 0x0103
+mov cx, 0x0007
+int 10h
 
 system:
 	mov ah, 02h
@@ -84,4 +91,4 @@ keyPress:
 	.noKeyPress:
 		ret
 
-times 512*4-($-$$) db 0
+times 512*2-($-$$) db 0
