@@ -1,54 +1,81 @@
-%define bootSector 0x7c00
-org bootSector - 512
+%define bootSector 0x7C00          ; Address at which BIOS will load MBR
+%define mbrCopyOffset 512         ; Address at which MBR should be copied
 
-mov [bootDrive], dl
-call setupPrinting
+%define color 0x07           ; Background and text color
+%define errorColor 0x0c           ; Background and text color
+%define warningColor 0x0e           ; Background and text color
 
-mov ax, 3
-int 10h
+bits 16
+org bootSector - mbrCopyOffset
 
-call copyEbem
-jmp $ - 510
+mov [savedDX], dx
 
-call menuLoop
+; copy old
+mov si, bootSector                 ; Source Index to copy code from
+mov di, bootSector - mbrCopyOffset                 ; bootSector - mbrCopyOffsetination Index to copy code to
+mov cx, 512                 ; Number of bytes to be copied
+cld                          ; Clear Direction Flag (move forward)
+rep movsb                    ; Repeat MOVSB instruction for CX times
+jmp afterMbrCopy - mbrCopyOffset              ; Jump to copied code skipping part above
 
-jmp $
+afterMbrCopy:           ; Go here in copied code
 
-mov al, 4
-mov ah, 2h
-mov bx, bootSector
-mov cx, 2
-mov dl, [bootDrive]
-mov dh, 0
-int 13h
+; video settings
+mov ax, 0x0003  ; function 0, mode 3
+int 0x10        ; change video mode
 
-jmp bootSector
+mov ax, 0x0103  ; function 1, mode 3
+mov cx, 0x0105  ; cursor height 1-5 (max 0-7)
+int 0x10        ; change cursor shape
 
-bootDrive equ 0x00
+call countActiveParts
+cmp ax, 1
+je autoChooseStart
 
-ebem_mbr_name:
-	db 'MBR EBeM', 0x00
+countActiveParts:
+	mov ax, 0
+	mov bx, 0
+	mov cx, 4
 
-ebem_mbr_ver:
-	db 'pre 0.1', 0x00
+	.loop:
+		call getPartitionState
+		je .inc
+		loop .loop
+	ret
 
-%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/copy_ebem.asm"
+	.inc:
+		mov bl, cl
+		inc ax
+
+getPartitionState:
+	mov bp, cx
+	shl bp, 4
+	add bp, partitionTableStart - 16
+	cmp byte [bp], 0x80
+	ret
+
+
+;values
+savedDX equ 0x0000
+selectedPartition equ 0x00
+
+; strings
+errorString: db "Erro", 0
+warningString: db "Warn", 0
+noBootString: db ": no boot ", 0
+markString: db "mark", 0
+codeString: db "code", 0
+
+%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/auto.asm"
 %include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/print.asm"
-%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/menu.asm"
+%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/start.asm"
+%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/debug.asm"
 
-times 446 - ($-$$) db 0
+times 446 - ($ - $$) db 0x00
 
-; beef partition
-db 0x80
-db 0
-db 0x02
-db 0
-db 0xEA
-db 0
-db 0x06
-db 0
-dq 0
+; partition table
+partitionTableStart:
+%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr/part_table.asm"
 
-times 48 db 0x00
-
+; boot sector signature
 dw 0xaa55

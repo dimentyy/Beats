@@ -1,17 +1,17 @@
 cd "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats"
+truncate -s 0 temp/nasm_error_log.txt
+truncate -s 0 boot.img
+
+function compile {
+	nasm ${1}.asm -f bin -o temp/${2}.bin -s >> temp/nasm_error_log.txt;
+	if [[ -e temp/${2}.bin ]]; then cat temp/${2}.bin >> boot.img; fi
+}
+
+compile ebem/mbr/main mbr
+compile system/extended_program/main ext
 
 clear
 
-nasm ebem/mbr/main2.asm -f bin -o boot.bin
-nasm system/extended_program/main.asm -f bin -o ext_prog.bin
-
-cat boot.bin ext_prog.bin > boot
-
-rm boot.bin
-rm ext_prog.bin
-
-echo
-echo ================================================================================
-echo
-
-open /Users/MatviCoolk/Library/Containers/com.utmapp.UTM/Data/Documents/Beats.utm
+if [[ ! -s temp/nasm_error_log.txt ]]
+then open Beats.utm; osascript -e 'tell app "Terminal" to close front window'
+else cat temp/nasm_error_log.txt; fi

@@ -1,20 +1,14 @@
 %define bootSector 0x7c00
-
 org bootSector
 
-mov [bootDrive], dl
-
-mov al, 3
-mov ah, 2h
+mov ax, 0x0206
 mov bx, bootSector + 512
 mov cx, 3
-mov dl, [bootDrive]
+mov dl, 0
 mov dh, 0
 int 13h
 
 jmp bootSector + 512
-
-bootDrive equ 0x00
 
 ;%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Sand Desert Beats/system/extended_program/input_driver/setup.asm"
 ;%include "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Sand Desert Beats/system/extended_program/custom_interrupts.asm"
@@ -91,4 +85,4 @@ keyPress:
 	.noKeyPress:
 		ret
 
-times 512*2-($-$$) db 0
+times 512*7-($-$$) db 0

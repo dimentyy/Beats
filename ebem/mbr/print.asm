@@ -1,12 +1,6 @@
-setupPrinting:
-	mov ah, 0x0f
-	int 10h
-	mov byte [bootSector + 512], ah
-	ret
-
 printChar:
 	; calculate address
-	mov al, [bootSector + 512]
+	mov al, 80
 	mov bx, cx
 
 	mul bh
@@ -19,6 +13,7 @@ printChar:
 	mov ax, 0xb800
 	mov es, ax
 	mov word [es:bx], dx
+	inc cx
 	ret
 
 printString:
@@ -29,7 +24,6 @@ printString:
 		cmp dl, 0
 		je .done
 		call printChar
-		inc cx
 		jmp .loop
 
 	.done:

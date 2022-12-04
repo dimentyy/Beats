@@ -13,9 +13,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Beats.utm/config.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Beats.utm/view.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/mbr/auto.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/mbr/debug.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/mbr/part_table.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/mbr/start.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/old/main.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/ext.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/mbr.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/nasm_error_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot" beforeDir="false" afterPath="$PROJECT_DIR$/boot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/main2.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main2.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/copy_ebem.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/old/copy_ebem.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main2.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main3.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/old/main3.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/menu.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/old/menu.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/print.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/print.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.command" beforeDir="false" afterPath="$PROJECT_DIR$/run.command" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/extended_program/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/system/extended_program/main.asm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,24 +65,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "fileTemplates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ebem/mbr" />
