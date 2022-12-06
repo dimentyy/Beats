@@ -11,9 +11,10 @@ start:
 	int 0x10        ; change video mode
 
 	.int13hBasic:
-		;mov bp, [selectedPartition]
-		;shl bp, 4
-		;add bp, partitionTableStart - 16 + 1
+		mov bp, bx
+		mov cl, 4
+		shl bp, cl
+		add bp, partitionTableStart - 16 + 1
 
 		mov ax, 0x0201              ; Function 02h, read only 1 sector
 		mov bx, 0x7c00              ; Buffer for read starts at 7C00
@@ -39,26 +40,24 @@ start:
 
 	.launch:
 		mov dx, [savedDX]
-		jmp 0x7c00
+		jmp bootSector
 
 	.noBootMark:
-		push markString
-		push warningString
-		mov dh, warningColor
+		mov si, infoString
+		call printString
 		call .bootPrint
+		mov si, markString
+		call printString
+		jmp $
 
 	.noBootCode:
-		push codeString
-		push errorString
-		mov dh, errorColor
+		mov si, warnString
+		call printString
 		call .bootPrint
+		mov si, codeString
+		call printString
+		jmp $
 
 	.bootPrint:
-		pop si
-		pop si
-	    call printString
 	    mov si, noBootString
 	    call printString
-	    pop si
-	    call printString
-        jmp $
