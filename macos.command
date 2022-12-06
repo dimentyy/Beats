@@ -12,6 +12,6 @@ compile system/extended_program/main ext
 
 clear
 
-if [[ ! -s temp/nasm_error_log.txt ]]
-then open Beats.utm; osascript -e 'tell app "Terminal" to close front window'
-else cat temp/nasm_error_log.txt; fi
+if [[ -s temp/nasm_error_log.txt ]]
+then cat temp/nasm_error_log.txt
+else open Beats.utm; osascript -e 'tell app "Terminal" to close front window'; fi

@@ -16,7 +16,8 @@ jmp bootSector + 512
 times 510-($-$$) db 0
 dw 0xaa55
 
-mov ax, 3
+mov ax, 0x4f02
+mov bx, 100h
 int 10h
 
 mov ax, 0x0103
@@ -26,7 +27,7 @@ int 10h
 system:
 	mov ah, 02h
 	mov bh, 0
-	mov dx, 1701h
+	mov dx, 0000h
 	int 10h
 
 	.loop:
@@ -40,6 +41,7 @@ system:
 				cmp al, 0x0d
 				je .return
 
+				mov bl, 0x07
 				mov ah, 0x0e
 				int 10h
 
