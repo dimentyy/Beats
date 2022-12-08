@@ -13,22 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/include.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/state_info.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebem/mbr/vals_strings.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_macos.command" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boot.img" beforeDir="false" afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/auto.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/auto.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/debug.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/part_table.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/part_table.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/print.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/print.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/start.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/start.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos.command" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/system/extended_program/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/system/extended_program/main.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp/ext.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ext.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/mbr.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/mbr.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

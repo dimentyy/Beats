@@ -20,7 +20,7 @@ dw 0xaa55
 
 cpu 8086
 
-mov ax, 2
+mov ax, 0
 int 10h
 
 system:
