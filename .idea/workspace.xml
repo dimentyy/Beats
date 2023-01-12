@@ -13,10 +13,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ebem/boot.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/main.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/mbr/boot.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/video.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_macos" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/boot.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/ebem_boot.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/ebem_main.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beats.utm/config.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Beats.utm/config.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beats.utm/view.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/boot.img" beforeDir="false" afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/extended_program/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/system/extended_program/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/auto.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/auto.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/include.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/part_table.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/print.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/start.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/state_info.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/vals_strings.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/old/copy_ebem.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/old/main.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/old/main3.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/old/menu.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_macos.command" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/custom_interrupts.asm" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/custom_interrupts.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/input_driver/mouse/get.asm" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/input_driver/mouse/get.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/input_driver/mouse/setup.asm" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/input_driver/mouse/setup.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/input_driver/setup.asm" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/input_driver/setup.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/extended_program/main.asm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp/ext.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ext.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/mbr.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/mbr.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +65,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ebem/boot.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/main.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/mbr/auto.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/mbr/boot.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/mbr/main.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/run_macos" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -48,24 +84,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/ebem/mbr",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ebem/mbr" />
@@ -75,11 +111,11 @@
       <recent name="$PROJECT_DIR$/system" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ebem/mbr" />
       <recent name="$PROJECT_DIR$/ebem" />
-      <recent name="$PROJECT_DIR$/file_systems/24bit" />
+      <recent name="$PROJECT_DIR$/drafts" />
+      <recent name="$PROJECT_DIR$/system" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/system/extended_program/vga_color_palletes" />
+      <recent name="$PROJECT_DIR$/ebem/mbr" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,6 +138,21 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/run_macos" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">

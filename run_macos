@@ -1,3 +1,4 @@
+clear
 cd "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats"
 truncate -s 0 temp/nasm_error_log.txt
 truncate -s 0 boot.img
@@ -8,9 +9,8 @@ function compile {
 }
 
 compile ebem/mbr/main mbr
-compile system/extended_program/main ext
-
-clear
+compile ebem/boot ebem_boot
+compile ebem/main ebem_main
 
 if [[ -s temp/nasm_error_log.txt ]]
 then cat temp/nasm_error_log.txt

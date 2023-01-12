@@ -2,110 +2,112 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Backend</key>
+	<string>QEMU</string>
 	<key>ConfigurationVersion</key>
-	<integer>2</integer>
-	<key>Debug</key>
-	<dict/>
+	<integer>4</integer>
 	<key>Display</key>
-	<dict>
-		<key>ConsoleFont</key>
-		<string>Menlo</string>
-		<key>ConsoleFontSize</key>
-		<integer>12</integer>
-		<key>ConsoleOnly</key>
-		<false/>
-		<key>ConsoleTheme</key>
-		<string>Default</string>
-		<key>DisplayCard</key>
-		<string>vmware-svga</string>
-		<key>DisplayDownscaler</key>
-		<string>linear</string>
-		<key>DisplayFitScreen</key>
-		<true/>
-		<key>DisplayUpscaler</key>
-		<string>nearest</string>
-	</dict>
-	<key>Drives</key>
 	<array>
 		<dict>
-			<key>DriveName</key>
-			<string>drive0</string>
-			<key>ImageType</key>
-			<string>cd</string>
-			<key>InterfaceType</key>
-			<string>floppy</string>
-			<key>Removable</key>
+			<key>DownscalingFilter</key>
+			<string>Linear</string>
+			<key>DynamicResolution</key>
 			<true/>
+			<key>Hardware</key>
+			<string>VGA</string>
+			<key>NativeResolution</key>
+			<false/>
+			<key>UpscalingFilter</key>
+			<string>Nearest</string>
 		</dict>
 	</array>
-	<key>Info</key>
-	<dict/>
+	<key>Drive</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>0</string>
+			<key>ImageType</key>
+			<string>Disk</string>
+			<key>Interface</key>
+			<string>Floppy</string>
+		</dict>
+	</array>
+	<key>Information</key>
+	<dict>
+		<key>IconCustom</key>
+		<false/>
+		<key>Name</key>
+		<string>Beats</string>
+		<key>UUID</key>
+		<string>00000000-0000-0000-0000-000000000000</string>
+	</dict>
 	<key>Input</key>
 	<dict>
-		<key>InputLegacy</key>
+		<key>MaximumUsbShare</key>
+		<integer>3</integer>
+		<key>UsbBusSupport</key>
+		<string>Disabled</string>
+		<key>UsbSharing</key>
 		<true/>
 	</dict>
-	<key>Networking</key>
+	<key>Network</key>
+	<array/>
+	<key>QEMU</key>
 	<dict>
-		<key>NetworkCard</key>
-		<string>e1000</string>
-		<key>NetworkCardMAC</key>
-		<string>AE:B2:00:85:A2:6F</string>
-		<key>NetworkMode</key>
-		<string>none</string>
+		<key>AdditionalArguments</key>
+		<array>
+			<string>-boot menu=off</string>
+		</array>
+		<key>BalloonDevice</key>
+		<false/>
+		<key>DebugLog</key>
+		<false/>
+		<key>Hypervisor</key>
+		<false/>
+		<key>PS2Controller</key>
+		<true/>
+		<key>RNGDevice</key>
+		<false/>
+		<key>RTCLocalTime</key>
+		<true/>
+		<key>TPMDevice</key>
+		<false/>
+		<key>UEFIBoot</key>
+		<false/>
 	</dict>
-	<key>Printing</key>
-	<dict/>
+	<key>Serial</key>
+	<array/>
 	<key>Sharing</key>
 	<dict>
 		<key>ClipboardSharing</key>
 		<false/>
-		<key>DirectoryReadOnly</key>
+		<key>DirectoryShareMode</key>
+		<string>None</string>
+		<key>DirectoryShareReadOnly</key>
 		<false/>
-		<key>DirectorySharing</key>
-		<false/>
-		<key>Usb3Support</key>
-		<false/>
-		<key>UsbRedirectMax</key>
-		<integer>3</integer>
 	</dict>
 	<key>Sound</key>
-	<dict>
-		<key>SoundCard</key>
-		<string>intel-hda</string>
-		<key>SoundEnabled</key>
-		<false/>
-	</dict>
+	<array/>
 	<key>System</key>
 	<dict>
 		<key>Architecture</key>
 		<string>x86_64</string>
-		<key>BootDevice</key>
-		<string></string>
-		<key>BootUefi</key>
-		<false/>
 		<key>CPU</key>
 		<string>default</string>
 		<key>CPUCount</key>
 		<integer>8</integer>
+		<key>CPUFlagsAdd</key>
+		<array/>
+		<key>CPUFlagsRemove</key>
+		<array/>
 		<key>ForceMulticore</key>
-		<true/>
-		<key>ForcePS2Controller</key>
 		<true/>
 		<key>JITCacheSize</key>
 		<integer>0</integer>
-		<key>Memory</key>
+		<key>MemorySize</key>
 		<integer>8192</integer>
-		<key>RTCUseLocalTime</key>
-		<true/>
-		<key>RngEnabled</key>
-		<false/>
-		<key>SystemUUID</key>
-		<string>0E3667BD-500D-4476-8DF8-04ED74F62FD7</string>
 		<key>Target</key>
 		<string>q35</string>
-		<key>UseHypervisor</key>
-		<false/>
 	</dict>
 </dict>
 </plist>
