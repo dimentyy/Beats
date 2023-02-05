@@ -48,7 +48,7 @@
 		<key>UsbBusSupport</key>
 		<string>Disabled</string>
 		<key>UsbSharing</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>Network</key>
 	<array/>
@@ -56,7 +56,8 @@
 	<dict>
 		<key>AdditionalArguments</key>
 		<array>
-			<string>-boot menu=off</string>
+			<string></string>
+			<string></string>
 		</array>
 		<key>BalloonDevice</key>
 		<false/>
@@ -91,11 +92,11 @@
 	<key>System</key>
 	<dict>
 		<key>Architecture</key>
-		<string>x86_64</string>
+		<string>i386</string>
 		<key>CPU</key>
 		<string>default</string>
 		<key>CPUCount</key>
-		<integer>8</integer>
+		<integer>1</integer>
 		<key>CPUFlagsAdd</key>
 		<array/>
 		<key>CPUFlagsRemove</key>
@@ -105,7 +106,7 @@
 		<key>JITCacheSize</key>
 		<integer>0</integer>
 		<key>MemorySize</key>
-		<integer>8192</integer>
+		<integer>1</integer>
 		<key>Target</key>
 		<string>q35</string>
 	</dict>

@@ -25,7 +25,7 @@ int 13h
 
 jb error
 
-jmp loadSegment:loadOffset
+jmp loadOffset
 
 error:
 	push ax
@@ -80,7 +80,7 @@ error:
 		.done:
 			ret
 
-int10hErrorString:  db "Int10h read error: 0x", 0
+int10hErrorString:  db "Int13h read error: 0x", 0
 tryAgainString:     db 0x0A, 0x0D, "Press any key to try again...", 0x0A, 0x0A, 0x0D, 0
 
 times 510-($-$$) db 0

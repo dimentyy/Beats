@@ -13,6 +13,7 @@ printString:
 		inc dl
 		mov ah, 02h
 		int 10h
+
 		jmp .loop
 
 newString:

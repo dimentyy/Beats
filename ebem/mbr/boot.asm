@@ -32,6 +32,7 @@ startBooting:
 		je .notABootSector              ; No bootloader code
 		cmp word [bootSector + 510], 0xAA55
 		jne .notABootSector             ; Missing bootable mark
+
 		ret
 
 	.launch:

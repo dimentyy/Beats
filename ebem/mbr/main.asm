@@ -59,6 +59,20 @@ printString:
 
 ; change video mode
 videoMode:
+	mov     al, 182         ; Prepare the speaker for the
+        out     43h, al         ;  note.
+        mov     ax, 4560        ; Frequency number (in decimal)
+                                ;  for middle C.
+        out     42h, al         ; Output low byte.
+        mov     al, ah          ; Output high byte.
+        out     42h, al
+        in      al, 61h         ; Turn on note (get value from
+                                ;  port 61h).
+        or      al, 00000011b   ; Set bits 1 and 0.
+        out     61h, al         ; Send new value.
+        mov     bx, 25
+	mov ax, 0500h
+	int 10h
 	mov ax, 3
 	int 10h
 	ret
@@ -67,7 +81,7 @@ videoMode:
 
 ; strings
 partitionString: db "Partition: ", 0
-int10hErrorString: db "Int10h error: 0x", 0
+int10hErrorString: db "Int13h error: 0x", 0
 notABootSectorString: db "Not a bootable sector", 0
 
 ; fill other bytes with zeros

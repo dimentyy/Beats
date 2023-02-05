@@ -12,7 +12,7 @@ autoChooseStart:
 		push cx
 		mov ah, 11h
 		int 16h
-		jne menuLoop
+		;jne menuLoop
 
 		mov ah, 86h
 		xor cx, cx
@@ -23,6 +23,7 @@ autoChooseStart:
 		int 10h
 
 		pop cx
+
 		loop .loop
 
 		jmp startBooting.launch
