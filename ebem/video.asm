@@ -2,7 +2,7 @@ printString:
 	.loop:
 		lodsb
 		cmp al, 0
-		jz return
+		jz .return
 
 		mov ah, 09h
 		mov cx, 1
@@ -16,11 +16,14 @@ printString:
 
 		jmp .loop
 
+	.return:
+		ret
+
 newString:
 	mov ah, 0Eh
 	mov al, 0Ah
 	int 10h
 	mov al, 0Dh
 	int 10h
-	return:
+	.return:
 		ret

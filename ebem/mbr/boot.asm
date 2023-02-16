@@ -8,7 +8,7 @@ startBooting:
 		shl bp, cl
 		add bp, partitionTableStart - 16
 		cmp byte [bp], 0x80
-		jne menuLoop
+		jne menuStart
 
 		mov bp, ax
 		mov cl, 4
@@ -61,7 +61,7 @@ startBooting:
 		xor ah, ah
 		int 16h
 		cmp al, 12
-		je menuLoop
+		je menuStart
 
 		jmp $
 

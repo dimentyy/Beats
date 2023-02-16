@@ -2,6 +2,7 @@ clear
 cd "/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats"
 truncate -s 0 temp/nasm_error_log.txt
 truncate -s 0 boot.img
+utmctl=/Applications/UTM.app/Contents/MacOS/utmctl
 
 function compile {
 	nasm ${1}.asm -f bin -o temp/${2}.bin -s >> temp/nasm_error_log.txt;
@@ -14,4 +15,4 @@ compile ebem/main ebem_main
 
 if [[ -s temp/nasm_error_log.txt ]]
 then cat temp/nasm_error_log.txt
-else open Beats.utm; osascript -e 'tell app "Terminal" to close front window'; fi
+else open Beats.utm; $utmctl stop "Beats"; $utmctl start "Beats"; osascript -e 'tell app "Terminal" to close front window'; fi
