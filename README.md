@@ -3,5 +3,5 @@ Bootable floppy to do something...
 
 First a boot manager than a FAT reader fully in assembly for 8086, no C.
 
-# Image
-<img width="719" alt="Снимок экрана 2023-02-17 в 09 55 16" src="https://user-images.githubusercontent.com/114256092/219571555-8e1cbbb4-948a-4ec7-ae05-b5e760844bdb.png">
+# Preview
+<img alt="Снимок экрана 2023-02-17 в 15 21 33" src="https://user-images.githubusercontent.com/114256092/219652459-5609159a-b07e-4563-b5c0-848c5ef7d5a8.png">
