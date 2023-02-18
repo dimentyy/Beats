@@ -36,7 +36,6 @@ startBooting:
 		ret
 
 	.launch:
-		call videoMode
 		mov dx, [savedDX]
 		jmp bootSector
 
@@ -44,12 +43,10 @@ startBooting:
 		push ax
 		push ax
 
-		call videoMode
 		mov si, int10hErrorString
 		call printString
 
 		pop ax
-		and al, 0xf0
 		mov cl, 4
 		shl al, cl
 		call .nibble
@@ -58,18 +55,7 @@ startBooting:
 		and al, 0x0f
 		call .nibble
 
-		xor ah, ah
-		int 16h
-		cmp al, 12
-		je menuStart
-
 		jmp $
-
-	.resetDisk:
-		xor ah, ah
-		mov dx, [savedDX]
-		int 13h
-		jmp .int13hBasic
 
 	.nibble:
 		cmp al, 0x0a
@@ -81,6 +67,12 @@ startBooting:
 		xor bh, bh
 		int 10h
 		ret
+
+	.resetDisk:
+		xor ah, ah
+		mov dx, [savedDX]
+		int 13h
+		jmp .int13hBasic
 
 	.notABootSector:
 		mov si, notABootSectorString

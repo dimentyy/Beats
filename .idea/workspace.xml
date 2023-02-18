@@ -12,7 +12,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="" />
+    <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/temp/ebem_main 2.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/mbr 2.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot.img" beforeDir="false" afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/auto.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/auto.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/boot.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/ebem_main.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ebem_main.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/mbr.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/mbr.bin" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

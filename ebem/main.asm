@@ -150,7 +150,7 @@ mainMenu:
 
 			; print underline
 			mov ax, 0ecdh
-			mov cx, 13
+			mov cx, 14
 			.underLine:
 				int 10h
 				loop .underLine
@@ -243,7 +243,7 @@ moveString:     db "Move", 0x00
 executeString:  db "Execute", 0x00
 aboutString:    db "About", 0x00
 
-aboutHeaderString: db " EBeM v1", 0x00
+aboutHeaderString: db " EBeM v2:", 0x00
 aboutFooterString: db   "Creation of @MatviCoolk", 0x0D, "From 22.09 to 23.02", 0x0D, 0x0D, 0x0D, "Thank you for attention! ", 0x03, 0x00
 
 loadOffset: dw 0x1000

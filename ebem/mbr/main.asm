@@ -28,26 +28,58 @@ je menuStart
 %include "ebem/mbr/auto.asm"
 
 menuStart:
-	mov ah, 02h
-	mov bh, 0
-	mov dl, 2
-	mov dh, 1
-	int 10h
+	mov dx, 0102h
+	call cursorPosition
 
 	mov si, partitionString
 	call printString
 
 	; print underline
 	mov ax, 0ecdh
-	mov cx, 13
+	mov cx, 12
 	.underLine:
 		int 10h
 		loop .underLine
 
-	menuLoop:
+	mov byte [bootSector], "5"
 
+	.partitionDec4:
 
-		jmp menuLoop
+	sub byte [bootSector], 8
+
+	.partitionInc4:
+
+	add byte [bootSector], 4
+
+	.menuLoop:
+		mov ax, 0xb800
+		mov es, ax
+		mov bx, 186
+		mov al, [bootSector]
+		mov [es:bx], al
+
+		mov ah, 0
+		int 16h
+		cmp ah, 0x48
+		je .partitionInc
+		cmp ah, 0x50
+		je .partitionDec
+		.afterKeyPress:
+
+		jmp .menuLoop
+
+		.partitionInc:
+			add byte [bootSector], 2
+
+		.partitionDec:
+			dec byte [bootSector]
+
+			cmp byte [bootSector], "1"
+			jl .partitionInc4
+			cmp byte [bootSector], "4"
+			jg .partitionDec4
+
+			jmp .menuLoop
 
 ; check if partition is active
 getPartitionState:
@@ -82,12 +114,17 @@ videoMode:
 	int 10h
 	ret
 
+cursorPosition:
+	mov ah, 2
+	xor bh, bh
+	int 10h
+
 %include "ebem/mbr/boot.asm"
 
 ; strings
-partitionString: db "Partition: ", 0x0d, 0x0a, "  ", 0
-int10hErrorString: db "Int13h error: 0x", 0
-notABootSectorString: db "Not a bootable sector", 0
+partitionString: db "Partition:", 0x0d, 0x0a, "  ", 0
+int10hErrorString: db "Err: 0x", 0
+notABootSectorString: db "No.", 0
 
 ; fill other bytes with zeros
 times 445 - ($ - $$) db 0x00

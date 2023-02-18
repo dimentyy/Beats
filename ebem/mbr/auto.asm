@@ -1,10 +1,8 @@
 autoChooseStart:
 	call startBooting.int13hBasic
 
-	mov ah, 2
-	xor bh, bh
 	mov dx, 1700h
-	int 10h
+	call cursorPosition
 
 	mov cx, 80
 
