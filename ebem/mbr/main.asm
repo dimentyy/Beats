@@ -1,5 +1,5 @@
 %define bootSector 0x7C00                           ; address where mbr is loaded
-%define mbrCopyOffset 1024                          ; mbr copy address offset
+%define mbrCopyOffset 1024                           ; mbr copy address offset
 %define mbrCopyAddress bootSector - mbrCopyOffset   ; mbr copy address
 
 ; value addresses
@@ -19,20 +19,15 @@ rep movsb
 jmp $ - mbrCopyOffset + 2
 
 call videoMode
-mov ah, 1
-mov cx, 2607h
-int 10h
 
 cmp byte [lastBootPartition], 0
 je menuStart
 %include "ebem/mbr/auto.asm"
 
 menuStart:
-	mov dx, 0102h
+	call videoMode
+	mov dx, 0202h
 	call cursorPosition
-
-	mov si, partitionString
-	call printString
 
 	; print underline
 	mov ax, 0ecdh
@@ -41,21 +36,31 @@ menuStart:
 		int 10h
 		loop .underLine
 
-	mov byte [bootSector], "5"
+	mov dx, 0102h
+	call cursorPosition
+
+	mov si, partitionString
+	call printString
+
+	mov word [bootSector], 5
 
 	.partitionDec4:
 
-	sub byte [bootSector], 8
+	sub word [bootSector], 8
 
 	.partitionInc4:
 
-	add byte [bootSector], 4
+	add word [bootSector], 4
 
 	.menuLoop:
+		mov ax, [bootSector]
+		mov word [lastBootPartition], ax
+
 		mov ax, 0xb800
 		mov es, ax
 		mov bx, 186
-		mov al, [bootSector]
+		mov ax, [bootSector]
+		add ax, "0"
 		mov [es:bx], al
 
 		mov ah, 0
@@ -64,19 +69,21 @@ menuStart:
 		je .partitionInc
 		cmp ah, 0x50
 		je .partitionDec
+		cmp ah, 0x1C
+		je autoChooseStart
 		.afterKeyPress:
 
 		jmp .menuLoop
 
 		.partitionInc:
-			add byte [bootSector], 2
+			add word [bootSector], 2
 
 		.partitionDec:
-			dec byte [bootSector]
+			dec word [bootSector]
 
-			cmp byte [bootSector], "1"
+			cmp word [bootSector], 1
 			jl .partitionInc4
-			cmp byte [bootSector], "4"
+			cmp word [bootSector], 4
 			jg .partitionDec4
 
 			jmp .menuLoop
@@ -118,19 +125,20 @@ cursorPosition:
 	mov ah, 2
 	xor bh, bh
 	int 10h
+	ret
 
 %include "ebem/mbr/boot.asm"
 
 ; strings
-partitionString: db "Partition:", 0x0d, 0x0a, "  ", 0
+partitionString: db "Partition: ", 0
 int10hErrorString: db "Err: 0x", 0
 notABootSectorString: db "No.", 0
 
 ; fill other bytes with zeros
-times 445 - ($ - $$) db 0x00
+times 444 - ($ - $$) db 0x00
 
 ; variables
-lastBootPartition: db 1
+lastBootPartition: dw 1
 
 ; partition table
 partitionTableStart:

@@ -1,28 +1,20 @@
 startBooting:
 	.int13hBasic:
-		mov al, [lastBootPartition]
-		xor ah, ah
+		mov bp, [lastBootPartition]
 
-		mov bp, ax
 		mov cl, 4
 		shl bp, cl
 		add bp, partitionTableStart - 16
 		cmp byte [bp], 0x80
 		jne menuStart
 
-		mov bp, ax
-		mov cl, 4
-		shl bp, cl
-		add bp, partitionTableStart - 16 + 1
-
-		mov ax, 0
+		xor ax, ax
 		mov es, ax
 
 		mov ax, 0x0201              ; Function 02h, read only 1 sector
 		mov bx, bootSector              ; Buffer for read starts at 7C00
 		mov dx, [savedDX]             ; DL = Disk Drive
-		mov dh, 0
-		mov cx, 2
+		mov cx, [bp+1]
 
 		int 13h
 		jb .error
@@ -32,7 +24,6 @@ startBooting:
 		je .notABootSector              ; No bootloader code
 		cmp word [bootSector + 510], 0xAA55
 		jne .notABootSector             ; Missing bootable mark
-
 		ret
 
 	.launch:
@@ -75,6 +66,8 @@ startBooting:
 		jmp .int13hBasic
 
 	.notABootSector:
+		mov dx, 0x0000
+		call cursorPosition
 		mov si, notABootSectorString
 		call printString
-		jmp $
+		jmp menuStart
