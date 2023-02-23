@@ -27,3 +27,53 @@ newString:
 	int 10h
 	.return:
 		ret
+
+printMainMenuString:
+	xor ax, ax
+	mov al, [stringAddresses + si]
+	mov si, ax
+	add si, stringAddresses
+
+	call printString
+
+	ret
+
+printMenuString:
+	mov ah, 3
+	xor bh, bh
+	int 10h
+
+	push dx
+
+	.loop:
+		lodsb
+		cmp al, 0
+		jz .return
+
+		cmp al, 0x0D
+		je .changeCursorPosition
+
+		mov ah, 09h
+		mov cx, 1
+		int 10h
+
+		mov ah, 03h
+		int 10h
+		inc dl
+		mov ah, 02h
+		int 10h
+
+		jmp .loop
+
+		.changeCursorPosition:
+			mov ah, 02h
+			xor bh, bh
+			pop dx
+			inc dh
+			push dx
+			int 10h
+			jmp .loop
+
+		.return:
+			pop dx
+			ret

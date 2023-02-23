@@ -9,7 +9,6 @@ org bootSector
 cpu 8086
 
 push dx
-push dx
 
 mov ax, loadSegment
 mov es, ax
@@ -17,7 +16,6 @@ mov es, ax
 mov ah, 2h
 mov al, sectorsToRead
 mov bx, loadOffset
-pop dx
 mov dh, head
 mov cx, sectorCylinder
 

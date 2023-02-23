@@ -19,6 +19,8 @@
 			<false/>
 			<key>UpscalingFilter</key>
 			<string>Nearest</string>
+			<key>VgaRamMib</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>Drive</key>
@@ -102,7 +104,7 @@
 		<key>CPUFlagsRemove</key>
 		<array/>
 		<key>ForceMulticore</key>
-		<true/>
+		<false/>
 		<key>JITCacheSize</key>
 		<integer>0</integer>
 		<key>MemorySize</key>

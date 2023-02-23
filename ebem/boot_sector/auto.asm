@@ -1,5 +1,7 @@
 autoChooseStart:
 	call startBooting.int13hBasic
+	jmp menuStart
+	.afterInt13h:
 
 	mov dx, 1700h
 	call cursorPosition
@@ -12,18 +14,18 @@ autoChooseStart:
 
 	.loop:
 		push cx
-		mov ah, 11h
-		int 16h
-		jne menuStart
-
-		mov ah, 86h
-		mov dx, 6250
-		xor cx, cx
-		int 15h
 
 		mov ax, 0x0edb
 		int 10h
 
+		mov ah, 86h
+		mov dx, 5000
+		xor cx, cx
+		int 15h
+
+		mov ah, 11h
+		int 16h
+		jne menuStart
+
 		pop cx
 		loop .loop
-		jmp startBooting.launch

@@ -13,17 +13,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README/Preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/about.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/boot_sector/main.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ebem/menu_start.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/macos.zsh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/mbr_boot_sector.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beats.utm/config.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Beats.utm/config.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boot.img" beforeDir="false" afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/auto.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/auto.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/boot.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/mbr/main.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/boot.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/ebem.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/ebem_main 2.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/ext.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/mbr 2.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/mbr.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/mbr.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/boot.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/main.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/auto.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/boot_sector/auto.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/boot_sector/boot.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/mbr/main.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebem/video.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/video.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/macos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/ebem_boot.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ebem_boot_sector.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/ebem_main.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ebem_main.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/mbr.bin" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +55,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ebem/boot.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/boot_sector/auto.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/boot_sector/boot.asm" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ebem/boot_sector/main.asm" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ebem/main.asm" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ebem/mbr/auto.asm" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ebem/mbr/boot.asm" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ebem/mbr/main.asm" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,22 +80,22 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/MatviCoolk/Library/Mobile Documents/com~apple~CloudDocs/iCloud Drive/Beats/README&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.quicklists&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/README" />
       <recent name="$PROJECT_DIR$/ebem/mbr" />
       <recent name="$PROJECT_DIR$/boot_sector" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/system/extended_program" />
-      <recent name="$PROJECT_DIR$/system" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ebem" />
