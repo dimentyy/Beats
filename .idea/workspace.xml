@@ -13,13 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="362d7495-0fc3-4ba9-8295-a91b24e8cd10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boot.img" beforeDir="false" afterPath="$PROJECT_DIR$/boot.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/main.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/main.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebem/menu_start.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/menu_start.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ebem/video.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ebem/video.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/macos.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/run/macos.zsh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp/ebem_main.bin" beforeDir="false" afterPath="$PROJECT_DIR$/temp/ebem_main.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/nasm_error_log.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,5 +1,5 @@
-# Sand Desert Beats
-Bootable floppy image with boot manager and FAT reader / writer.\
+# About Beats
+Bootable floppy image with boot manager and FAT reader / writer.
 
 > Entirely written in assembly without C (and always will be).
 
