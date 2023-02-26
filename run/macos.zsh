@@ -15,7 +15,7 @@
 : to reduce space;
 	function compile {
 		nasm ${1}.asm -f bin -o $temp/${2}.bin -s >> $temp/nasm_error_log.txt;
-		if [[ -e $temp/${2}.bin ]]; then cat $temp${2}.bin >> boot.img; fi
+		if [[ -e $temp/${2}.bin ]]; then cat $temp${2}.bin >> boot.img; fi;
 	}
 
 : repeat for all assembly files;
@@ -26,9 +26,11 @@
 : check if errors occured, show them;
   if [[ -s $temp/nasm_error_log.txt ]]; then
     cat $temp/nasm_error_log.txt
+    zsh
 : if not, run utm vm;
   else
     open $utm_vm_file;
     $utmctl stop  $utm_vm_name;
     $utmctl start $utm_vm_name;
-    osascript -e 'tell app "Terminal" to close front window'; fi
+    osascript -e 'tell app "Terminal" to close front window'
+    exit; fi

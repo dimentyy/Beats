@@ -45,6 +45,9 @@ printMenuString:
 
 	push dx
 
+	mov ax, 0xb800
+	mov es, ax
+
 	.loop:
 		lodsb
 		cmp al, 0
@@ -53,9 +56,7 @@ printMenuString:
 		cmp al, 0x0D
 		je .changeCursorPosition
 
-		mov ah, 09h
-		mov cx, 1
-		int 10h
+		mov [es:bx]
 
 		mov ah, 03h
 		int 10h
@@ -66,14 +67,18 @@ printMenuString:
 		jmp .loop
 
 		.changeCursorPosition:
-			mov ah, 02h
-			xor bh, bh
 			pop dx
 			inc dh
 			push dx
-			int 10h
+			call cursorPosition
 			jmp .loop
 
 		.return:
 			pop dx
 			ret
+
+cursorPosition:
+	mov ah, 2
+	xor bh, bh
+	int 10h
+	ret

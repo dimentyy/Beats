@@ -8,10 +8,8 @@ mov ch, 3fh
 int 10h
 
 ; cursor position
-mov ah, 02h
-xor bh, bh
 mov dx, 0x0102
-int 10h
+call cursorPosition
 
 ; print string
 mov si, ebemOptionsString
@@ -20,10 +18,8 @@ call printString
 call newString
 
 ; cursor position
-mov ah, 02h
-xor bh, bh
 mov dx, 0x0202
-int 10h
+call cursorPosition
 
 ; print underline
 mov ax, 0ecdh
@@ -33,16 +29,14 @@ mov cx, 13
 	loop .underLine
 
 mov cx, numberOfOptions
-mov byte [mainMenuChoose + 0x1000], numberOfOptions
+mov byte [mainMenuChoose], numberOfOptions
 .stringLoop:
 	; set cursor position
-	mov ah, 02h
-	mov bh, 0
 	mov dx, 0x0304
-	add dh, [mainMenuChoose + 0x1000]
-	int 10h
+	add dh, [mainMenuChoose]
+	call cursorPosition
 
-	dec byte [mainMenuChoose + 0x1000]
+	dec byte [mainMenuChoose]
 
 	mov si, cx
 	dec si

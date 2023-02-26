@@ -1,4 +1,3 @@
-%define mainMenuChoose 0x2000
 %define bootSector 0x7c00
 %define numberOfOptions 5
 org 0x1000
@@ -10,16 +9,13 @@ mainMenu:
 
 	mainMenuLoop:
 		.showSelectedOption:
-			mov ah, 02h
-			mov bh, 0
-			mov dl, 4
-			mov dh, [mainMenuChoose + 0x1000]
-			add dh, 4
-			int 10h
+			mov dx, 0404h
+			add dh, [mainMenuChoose]
+			call cursorPosition
 
 			mov bx, 7 * 16
-			mov si, [mainMenuChoose + 0x1000]
-			call printMainMenuString + $$ + 0x1000
+			mov si, [mainMenuChoose]
+			call printMainMenuString
 
 		.waitForKeyPress:
 			mov ah, 0x00
@@ -41,7 +37,7 @@ mainMenu:
 
 		.returnKeyPress:
 
-		cmp byte [mainMenuChoose + 0x1000], 4
+		cmp byte [mainMenuChoose], 4
 		je .about
 
 		.load:
@@ -58,28 +54,25 @@ mainMenu:
 
 		.arrowUpKeyPress:
 			call .arrowKeyPress
-			cmp byte [mainMenuChoose + 0x1000], 0
+			cmp byte [mainMenuChoose], 0
 			jle .afterKeyPress
-			dec byte [mainMenuChoose + 0x1000]
+			dec byte [mainMenuChoose]
 			jmp .afterKeyPress
 
 		.arrowDownKeyPress:
 			call .arrowKeyPress
-			cmp byte [mainMenuChoose + 0x1000], numberOfOptions - 1
+			cmp byte [mainMenuChoose], numberOfOptions - 1
 			jge .afterKeyPress
-			inc byte [mainMenuChoose + 0x1000]
+			inc byte [mainMenuChoose]
 			jmp .afterKeyPress
 
 		.arrowKeyPress:
-			mov ah, 02h
-			mov bh, 0
-			mov dl, 4
-			mov dh, [mainMenuChoose + 0x1000]
-			add dh, 4
-			int 10h
+			mov dx, 0404h
+			add dh, [mainMenuChoose]
+			call cursorPosition
 
 			mov bx, 7
-			mov si, [mainMenuChoose + 0x1000]
+			mov si, [mainMenuChoose]
 			call printMainMenuString
 			ret
 
@@ -107,6 +100,6 @@ aboutFooterString: db   "Creation of @MatviCoolk", 0x0D, 0x0D, "Boot Manager fro
 
 executeHeaderString: db "Execute menu:"
 
-loadOffset: dw 0x1000
+mainMenuChoose: db 0x00
 
-times 512 * 16 - ($-$$) db 0
+times 512 * 8 - ($-$$) db 0
