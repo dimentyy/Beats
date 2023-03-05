@@ -17,35 +17,28 @@ mainMenu:
 			mov si, [mainMenuChoose]
 			call printMainMenuString
 
-		.waitForKeyPress:
-			mov ah, 0x00
-			int 16h
-			push ax
-			cmp ah, 0x48
-			je .arrowUpKeyPress
-			cmp ah, 0x50
-			je .arrowDownKeyPress
-			cmp al, 0x0D
-			je .returnKeyPress
-			jmp .waitForKeyPress
+		mov si, mainMenuControl
+		jmp menuControl
 
 		.afterKeyPress:
-			pop ax
-			.noAx:
 
 		jmp mainMenuLoop
 
 		.returnKeyPress:
 
-		cmp byte [mainMenuChoose], 4
-		je .about
+		cmp word [mainMenuChoose], 1
+		jl .load
+		je .write
+
+		cmp word [mainMenuChoose], 3
+		jl .move
+		je .execute
+		jg .about
 
 		.load:
 		.write:
 		.move:
 		.execute:
-
-		jmp mainMenuLoop
 
 		.about:
 			%include "ebem/about.asm"
@@ -78,6 +71,45 @@ mainMenu:
 
 jmp $
 
+menuControl:
+	;mov di, menuControlChoose
+	;mov cx, 5
+	;rep movsw
+
+	mov cx, 3
+
+	mov di, menuControlChoose + 1
+
+	.setupLoop:
+		mov dx, [si]
+		mov [di], dx
+
+		add di, 3
+		add si, 2
+		loop .setupLoop
+
+	mov ax, 3
+	mov cx, 3
+	mov si, menuControlChoose
+	;call debugMemory
+
+	.loop:
+		mov ah, 0x00
+		int 16h
+		push ax
+		cmp ah, 0x48
+		je menuControlChoose
+		cmp ah, 0x50
+		je menuControlChoose + 3
+		cmp al, 0x0D
+		je menuControlChoose + 6
+		jmp .loop
+
+mainMenuControl:
+	dw mainMenuLoop.arrowUpKeyPress - menuControlChoose - 3
+	dw mainMenuLoop.arrowDownKeyPress - menuControlChoose - 6
+	dw mainMenuLoop.returnKeyPress - menuControlChoose - 9
+
 %include "ebem/video.asm"
 %include "ebem/debug.asm"
 
@@ -95,11 +127,16 @@ moveString:     db "Move", 0x00
 executeString:  db "Execute", 0x00
 aboutString:    db "About", 0x00
 
-aboutHeaderString: db " EBeM v3:", 0x00
+aboutHeaderString: db " EBeM v4:", 0x00
 aboutFooterString: db   "Creation of @MatviCoolk", 0x0D, 0x0D, "Boot Manager from", 0x0D, "22.09 to 23.02", 0x0D, 0x0D, 0x0D, "Thank you for attention! ", 0x03, 0x00
 
 executeHeaderString: db "Execute menu:"
 
-mainMenuChoose: db 0x00
+mainMenuChoose: dw 0
+
+menuControlChoose:
+	jmp 0x0000
+	jmp 0x0000
+	jmp 0x0000
 
 times 512 * 8 - ($-$$) db 0

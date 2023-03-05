@@ -15,16 +15,14 @@ function compile {
   if [[ -e $temp/${2}.bin ]]; then cat $temp${2}.bin >> boot.img; fi;
 }
 
-
-compile ebem/boot_sector/main   mbr_boot_sector
+compile boot_sector/main        mbr_boot_sector
 compile ebem/boot               ebem_boot_sector
 compile ebem/main               ebem_main
 
+clear
 if [[ -s error_log.txt ]]; then
   cat error_log.txt
 else
-  clear
   open $utm_vm_file;
   $utmctl stop  $utm_vm_name
-  $utmctl start $utm_vm_name
-  exit; fi
+  $utmctl start $utm_vm_name; fi

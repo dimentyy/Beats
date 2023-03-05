@@ -23,8 +23,8 @@ int 10h
 
 cmp byte [lastBootPartition], 0
 je menuStart
-%include "ebem/boot_sector/auto.asm"
-%include "ebem/boot_sector/boot.asm"
+%include "boot_sector/auto.asm"
+%include "boot_sector/boot.asm"
 
 menuStart:
 

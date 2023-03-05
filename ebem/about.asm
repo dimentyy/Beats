@@ -23,10 +23,9 @@ mov cx, 14
 	loop .underLine
 
 ; cursor position
-mov ah, 02h
-xor bh, bh
-mov dx, 0x0415
-int 10h
+mov dx, 0x0416
+call cursorPosition
 
+mov bx, 7
 mov si, aboutFooterString
 call printMenuString

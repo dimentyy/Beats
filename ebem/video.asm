@@ -56,12 +56,14 @@ printMenuString:
 		cmp al, 0x0D
 		je .changeCursorPosition
 
-		;mov [es:bx]
-
 		mov ah, 03h
 		int 10h
 		inc dl
 		mov ah, 02h
+		int 10h
+
+		mov cx, 1
+		mov ah, 09h
 		int 10h
 
 		jmp .loop
