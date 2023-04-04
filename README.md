@@ -6,7 +6,7 @@ Graphics: MDA
 * Text resolution: 80 x 25
 * Pixel resolution: 720 x 350
 
-Contains: a full working floppy image (9kb)
+Will * delete when done * Contains: a full working floppy image (9kb)
 * Boot sector
 * Boot sector for EBeM
 * EBeM (16 sectors, 8kb)
