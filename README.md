@@ -9,7 +9,7 @@ Graphics: MDA
 Contains: a full working floppy image (9kb)
 * Boot sector
 * Boot sector for EBeM
-* EBeM (16 sectors = 8kb)
+* EBeM (16 sectors, 8kb)
 
 ###### Sorry, no Windows builder for now
 
