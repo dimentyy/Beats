@@ -1,4 +1,4 @@
-debugAL:
+debugAl:
 	push ax
 	push ax
 
@@ -28,15 +28,30 @@ debugAL:
 		int 10h
 		ret
 
-debugMemory:
-	push ax
+debugNibble:
 	push cx
-	xor dx, dx
-	call cursorPosition
-	pop ax
-	pop cx
-	.loop:
+	mov cx, 1
+	cmp al, 10
 
+	jl  .afterAdd
+		add al, "A" - "9" - 1
+	.afterAdd:
+
+	add al, "0"
+	mov ah, 0x09
+	xor bh, bh
+	int 10h
+	pop cx
+	ret
+
+debugAx:
+
+
+; ax - one block length
+; cx - blocks count
+; si - memory address to debug
+debugMemory:
+	.loop:
 		push cx
 
 		mov cl, 4

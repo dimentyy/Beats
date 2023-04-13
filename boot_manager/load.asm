@@ -1,0 +1,2 @@
+loadMenu:
+	jmp mainMenuLoop

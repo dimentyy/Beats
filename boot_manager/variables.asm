@@ -1,0 +1,1 @@
+mainMenuSelectedOption: db 1

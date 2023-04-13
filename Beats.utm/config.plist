@@ -36,8 +36,10 @@
 	</array>
 	<key>Information</key>
 	<dict>
+		<key>Icon</key>
+		<string>7bb4310a-1bab-49a3-9098-2ce2fd5aad45.jpg</string>
 		<key>IconCustom</key>
-		<false/>
+		<true/>
 		<key>Name</key>
 		<string>Beats</string>
 		<key>UUID</key>
@@ -96,7 +98,7 @@
 		<key>Architecture</key>
 		<string>i386</string>
 		<key>CPU</key>
-		<string>default</string>
+		<string>base</string>
 		<key>CPUCount</key>
 		<integer>1</integer>
 		<key>CPUFlagsAdd</key>
