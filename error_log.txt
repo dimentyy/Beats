@@ -1,0 +1,1 @@
+boot_manager/video.asm:192: error: symbol `drawSelection' not defined

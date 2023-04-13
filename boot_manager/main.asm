@@ -1,4 +1,4 @@
-%define numberOfOptions 6
+%define numberOfOptions 5
 %define numberOfMenuActions 6
 %define defaultTextAttributes 2
 %define boldTextAttributes 10
@@ -13,39 +13,10 @@
 %define rightArrowKeyPress 0x4D
 
 %define bootSector 0x7c00
-org 0x7000
+org 0x6000
 cpu 8086
 
 start:
-;	mov dx, 0
-;	call cursorPosition
-;	mov cx, 256 * 256 - 1
-;	.wow:
-;		push cx
-;		neg cx
-;		mov bx, cx
-;		mov al, cl
-;		mov cx, 1
-;		mov ah, 09h
-;		int 10h
-;
-;		mov ah, 03h
-;		int 10h
-;
-;		inc dl
-;
-;		cmp dl, 80
-;		jl .af
-;		xor dl, dl
-;		inc dh
-;		.af:
-;
-;		mov ah, 02h
-;		int 10h
-;		pop cx
-;		loop .wow
-;	jmp $
-
 	call mainMenuDraw
 
 mainMenuLoop:
@@ -82,13 +53,12 @@ mainMenuLoop:
 
 mainMenuJumps:
 	cmp byte [mainMenuSelectedOption], 2
-	jl loadMenu
-	je writeMenu
+	jl loadWriteMenu
+	je moveMenu
 
 	cmp byte [mainMenuSelectedOption], 4
-	jl moveMenu
-	je executeMenu
-	jg aboutMenu
+	jl executeMenu
+	je aboutMenu
 
 jmp start
 
@@ -146,10 +116,9 @@ mainMenuControl:
 	dw mainMenuLoop.arrowDownKeyPress
 
 ; menus
-%include "boot_manager/load.asm"
-%include "boot_manager/write.asm"
+%include "boot_manager/load_write/main.asm"
 %include "boot_manager/move.asm"
-%include "boot_manager/execute.asm"
+%include "boot_manager/execute/main.asm"
 %include "boot_manager/about.asm"
 
 ; other stuff
@@ -157,6 +126,7 @@ mainMenuControl:
 %include "boot_manager/video.asm"
 %include "boot_manager/strings.asm"
 %include "boot_manager/variables.asm"
+%include "boot_manager/functions.asm"
 %include "boot_manager/main_menu_draw.asm"
 
 times 512 * 16 - ($ - $$) db 0x00

@@ -3,7 +3,7 @@
 
 %define ebemStartSector 3
 %define ebemStartHead 0
-%define ebemOffsetStart 0x7000
+%define ebemOffsetStart 0x6000
 %define ebemSectorCount 16
 
 ; nasm options
@@ -22,7 +22,7 @@ int13h:
 	xor ax, ax
 	mov es, ax
 	mov ax, 0x0206
-	mov bx, 0x7000
+	mov bx, 0x6000
 	mov cx, 3
 	mov dx, [bootDx]
 	mov dh, 0

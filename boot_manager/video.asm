@@ -21,9 +21,11 @@ clearScreen:
 	mov dx, 0
 	call cursorPosition
 	mov ax, 0900h
-	mov bx, 0
+	mov bx, defaultTextAttributes
 	mov cx, 2000
 	int 10h
+	mov dx, 0
+	call cursorPosition
 
 videoPage:
 	mov ax, 500h
@@ -31,9 +33,11 @@ videoPage:
 	ret
 
 cursorPosition:
+	push bx
 	mov ah, 2
 	xor bh, bh
 	int 10h
+	pop bx
 	ret
 
 invisibleCursor:
@@ -168,3 +172,21 @@ printMainMenuSelectedString:
 	mov cl, [mainMenuSelectedOption]
 	call printMainMenuString
 	ret
+
+
+; menus
+
+menuFullSelectionUpdate:
+	push dx
+	push di
+
+	; clear selection
+	mov di, .afterClearing
+	call si
+
+	.afterClearing:
+
+	; update selection
+	pop di
+	pop dx
+	jmp drawSelection
