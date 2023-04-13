@@ -18,4 +18,4 @@ Will Contains: a full working floppy image (9kb)
 
 # Preview
 ###### 86Box VM Look
-<img width="1192" alt="Снимок экрана 2023-04-14 в 00 22 03" src="https://user-images.githubusercontent.com/114256092/231874318-c9b40b67-217d-4544-952c-52ce5cb38b64.png">
+<img width="1192" alt="Снимок экрана 2023-04-14 в 00 22 46" src="https://user-images.githubusercontent.com/114256092/231874450-ec521e2d-668c-401f-a93f-38929ed09502.png">
