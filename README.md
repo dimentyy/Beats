@@ -17,5 +17,5 @@ Will Contains: a full working floppy image (9kb)
 > Only 8086 instruction, so no 64 or 32 bit calculations.
 
 # Preview
-###### UTM VM Look
-<img alt="Preview.png" src="README/Preview.png">
+###### 86Box VM Look
+<img width="1192" alt="Снимок экрана 2023-04-14 в 00 22 03" src="https://user-images.githubusercontent.com/114256092/231874318-c9b40b67-217d-4544-952c-52ce5cb38b64.png">
